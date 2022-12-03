@@ -1,3 +1,5 @@
+IF you want to see the application yourself, Type flutter pub get after downloading the code.
+
 # coffee_ui
 
 A new Flutter project for Coffee Shops.
