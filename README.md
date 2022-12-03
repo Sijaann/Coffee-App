@@ -3,6 +3,5 @@
 A new Flutter project for Coffee Shops.
 
 ## Screenshots:
-![Screenshot_1669183991](https://user-images.githubusercontent.com/97155560/203482761-e2aad9db-cce8-41fb-b3ec-5fbc0c8700ac.png)
-17
 
+![Screenshot_1670082596](https://user-images.githubusercontent.com/97155560/205449647-9a78e786-69df-43b7-968f-3a01b7b73665.png)
