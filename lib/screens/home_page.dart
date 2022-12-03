@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
               child: CircleAvatar(
                 radius: 15.0,
                 child: ClipRRect(
-                  child: Image.asset('images/sanjee.png'),
+                  child: Image.asset('images/profilePic.jpg'),
                   borderRadius: BorderRadius.circular(50.0),
                 ),
               ),
