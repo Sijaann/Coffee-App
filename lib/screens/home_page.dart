@@ -1,5 +1,4 @@
 import 'package:coffee_ui/utils/coffee_tiles.dart';
-import 'package:coffee_ui/utils/coffee_types.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
