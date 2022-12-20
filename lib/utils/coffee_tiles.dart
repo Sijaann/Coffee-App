@@ -1,78 +1,100 @@
 import 'package:flutter/material.dart';
 
-class CoffeeTile extends StatelessWidget {
-  final String coffeeImagePath;
+class CoffeeTiles extends StatelessWidget {
+  final String imagePath;
   final String coffeeName;
+  Text? coffeeDetails;
   final String price;
 
-  const CoffeeTile(
-      {super.key,
-      required this.coffeeImagePath,
-      required this.coffeeName,
-      required this.price});
+  CoffeeTiles({
+    super.key,
+    required this.imagePath,
+    required this.coffeeName,
+    this.coffeeDetails,
+    required this.price,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 25.0),
-      child: Container(
-        width: 200,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: Colors.black45,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              //coffee Image
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.asset(coffeeImagePath),
-              ),
-
-              //Coffee name and additional info
-              Padding(
-                padding: const EdgeInsets.only(top: 12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      coffeeName,
-                      style: TextStyle(fontSize: 20.0),
-                    ),
-                    const SizedBox(height: 6),
-                    Text(
-                      "With Oat Milk",
-                      style: TextStyle(color: Colors.grey[700]),
-                    ),
-                  ],
+    return Container(
+      width: 200,
+      height: 275,
+      decoration: BoxDecoration(
+        color: Colors.grey[850],
+        borderRadius: BorderRadius.circular(25),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 160,
+              decoration: BoxDecoration(
+                color: Colors.orange,
+                borderRadius: BorderRadius.circular(25),
+                image: DecorationImage(
+                  image: AssetImage(
+                    imagePath,
+                  ),
+                  fit: BoxFit.cover,
                 ),
               ),
+            ),
 
-              //Price wala row
-              Padding(
-                padding: const EdgeInsets.only(top: 12.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "\$" + price,
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Container(
-                        padding: EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          color: Colors.orange,
-                          borderRadius: BorderRadius.circular(7),
-                        ),
-                        child: Icon(Icons.add)),
-                  ],
+            SizedBox(
+              height: 10,
+            ),
+            //COFFEE Details
+            Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: Text(
+                coffeeName,
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+
+            Padding(
+                padding: const EdgeInsets.only(left: 8), child: coffeeDetails),
+
+            SizedBox(
+              height: 12,
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 8, right: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "\$" + price,
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.orange,
+                    ),
+                    child: Center(
+                      child: Icon(
+                        Icons.add,
+                        size: 20,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
